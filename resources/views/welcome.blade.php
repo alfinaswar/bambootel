@@ -1,666 +1,922 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="zxx">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calao Bali: Eco-Luxury Bamboo Villas - Private Retreats with Mount Agung Views</title>
-    <meta name="description" content="Temukan pengalaman eco-luxury tak tertandingi di Calao Bali. Vila bambu pribadi dengan pemandangan Gunung Agung, in-villa dining, wellness retreat, dan kolam renang pribadi.">
-    <meta name="keywords" content="eco-luxury villas in Bali, private bamboo villas Bali, Mount Agung views, sustainable luxury Bali, in-villa dining Bali, wellness retreat Bali, private villa with plunge pool">
+    <title>Visit Calao</title>
+    <link rel="icon" href="{{asset('')}}assets/images/icon.webp" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="calao" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="author">
+    <!-- CSS Files
+    ================================================== -->
+    <link href="{{asset('')}}assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="{{asset('')}}assets/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('')}}assets/css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('')}}assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('')}}assets/css/coloring.css" rel="stylesheet" type="text/css">
+    <!-- custom-css -->
+    <link href="{{asset('')}}assets/css/swiper-custom-1.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('')}}assets/css/datepicker.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="{{asset('')}}assets/css/colors/scheme-01.css" rel="stylesheet" type="text/css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* CSS Variabel untuk Warna Brand */
-        :root {
-            --color-white: #FFFFFF;
-            --color-terracotta: #d8b29a;
-            --color-sandy-beige: #F5F2EA;
-            --color-dark-charcoal: #333333;
-            --color-black: #000000;
-        }
-
-        /* Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--color-dark-charcoal);
-            line-height: 1.6;
-            background-color: var(--color-sandy-beige);
-            overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--color-dark-charcoal);
-            margin-bottom: 0.5em;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--color-dark-charcoal);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--color-terracotta);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* Latar belakang transparan di awal, bisa berubah saat scroll */
-            background-color: transparent;
-            transition: background-color 0.3s ease;
-        }
-
-        .header-scrolled {
-            background-color: rgba(255, 255, 255, 0.95); /* Sedikit buram saat discroll */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            color: var(--color-white); /* Warna putih di atas video */
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Sedikit bayangan agar terlihat di video */
-        }
-        .header-scrolled .logo {
-            color: var(--color-dark-charcoal); /* Warna gelap saat header discroll */
-            text-shadow: none;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            font-weight: 500;
-            color: var(--color-white); /* Warna putih di atas video */
-            padding: 5px 0;
-            position: relative;
-        }
-        .header-scrolled nav ul li a {
-            color: var(--color-dark-charcoal); /* Warna gelap saat header discroll */
-        }
-        nav ul li a::after { /* Efek garis bawah */
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--color-terracotta);
-            transition: width 0.3s ease;
-        }
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        /* Burger menu untuk mobile */
-        .hamburger-menu {
-            display: none; /* Sembunyikan di desktop */
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        .hamburger-menu span {
-            height: 2px;
-            width: 25px;
-            background-color: var(--color-white);
-            margin-bottom: 5px;
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
-        .header-scrolled .hamburger-menu span {
-            background-color: var(--color-dark-charcoal);
-        }
-
-        /* Hero Section */
-        #hero {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Fullscreen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--color-white);
-            overflow: hidden;
-        }
-
-        #hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            background-size: cover;
-        }
-
-        #hero .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Overlay gelap agar teks terlihat */
-            z-index: 0;
-        }
-
-        #hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        #hero-content h1 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            color: var(--color-white);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-        }
-        #hero-content p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            color: var(--color-white);
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--color-terracotta);
-            color: var(--color-white);
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: #c49d8a; /* sedikit lebih gelap */
-            transform: translateY(-2px);
-        }
-
-        /* Sections Styling */
-        section {
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        section:nth-of-type(even) {
-            background-color: var(--color-sandy-beige);
-        }
-
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-        }
-        section h2::after { /* Garis bawah elegan */
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -10px;
-            width: 60px;
-            height: 2px;
-            background-color: var(--color-terracotta);
-        }
-
-        /* Intro Section */
-        #intro p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1em;
-            color: var(--color-dark-charcoal);
-        }
-
-        /* Features Section */
-        #features .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        #features .feature-item {
-            text-align: center;
-        }
-
-        #features .feature-item .icon {
-            font-size: 3em; /* Gunakan ikon font atau SVG */
-            color: var(--color-terracotta);
-            margin-bottom: 15px;
-        }
-        #features .feature-item h3 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            color: var(--color-dark-charcoal);
-        }
-        #features .feature-item p {
-            font-size: 0.95em;
-            color: var(--color-dark-charcoal);
-        }
-
-        /* Villa & Experiences Preview */
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-        .preview-item {
-            background-color: var(--color-white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .preview-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .preview-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-        .preview-item-content {
-            padding: 25px;
-        }
-        .preview-item-content h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .preview-item-content p {
-            font-size: 0.95em;
-            color: var(--color-dark-charcoal);
-            margin-bottom: 20px;
-        }
-        .preview-item .btn-secondary {
-            display: inline-block;
-            color: var(--color-terracotta);
-            border: 1px solid var(--color-terracotta);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .preview-item .btn-secondary:hover {
-            background-color: var(--color-terracotta);
-            color: var(--color-white);
-        }
-
-        /* Gallery Teaser */
-        #gallery-teaser .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-        #gallery-teaser .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        #gallery-teaser .gallery-item img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Booking CTA Section */
-        #booking-cta-section {
-            background-color: var(--color-dark-charcoal);
-            color: var(--color-white);
-            padding: 100px 20px;
-        }
-        #booking-cta-section h2 {
-            color: var(--color-white);
-            font-size: 3em;
-            margin-bottom: 30px;
-        }
-        #booking-cta-section .btn-primary {
-            background-color: var(--color-terracotta);
-            color: var(--color-white);
-            padding: 20px 40px;
-            font-size: 1.2em;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--color-black);
-            color: var(--color-white);
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9em;
-        }
-        footer .social-links a {
-            color: var(--color-white);
-            margin: 0 10px;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-        footer .social-links a:hover {
-            color: var(--color-terracotta);
-        }
-
-        /* Responsiveness (Mobile First - adjust for larger screens later if needed) */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-                background-color: rgba(255, 255, 255, 0.95); /* Selalu buram di mobile */
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            .logo {
-                color: var(--color-dark-charcoal); /* Selalu gelap di mobile */
-                text-shadow: none;
-            }
-            nav {
-                display: none; /* Sembunyikan nav di mobile secara default */
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 70px; /* Di bawah header */
-                left: 0;
-                background-color: var(--color-white);
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                padding: 20px 0;
-            }
-            nav.active {
-                display: flex; /* Tampilkan saat aktif */
-            }
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-            nav ul li {
-                margin: 10px 0;
-                text-align: center;
-            }
-            nav ul li a {
-                color: var(--color-dark-charcoal);
-                font-size: 1.1em;
-            }
-            .hamburger-menu {
-                display: flex; /* Tampilkan hamburger di mobile */
-            }
-
-            #hero-content h1 {
-                font-size: 2.5em;
-            }
-            #hero-content p {
-                font-size: 1em;
-            }
-            .btn-primary {
-                padding: 12px 25px;
-                font-size: 0.9em;
-            }
-
-            section {
-                padding: 60px 20px;
-            }
-            section h2 {
-                font-size: 2em;
-            }
-
-            .feature-grid, .preview-grid, .gallery-grid {
-                grid-template-columns: 1fr; /* Satu kolom di mobile */
-            }
-        }
-    </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo">CALAO BALI</div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#concept">Our Concept</a></li>
-                <li><a href="#villas">The Villas</a></li>
-                <li><a href="#experiences">Experiences</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+
+    <div id="wrapper">
+
+        <div class="float-text show-on-scroll">
+            <span><a href="#">Scroll to top</a></span>
         </div>
-    </header>
+        <div class="scrollbar-v show-on-scroll"></div>
 
-    <main>
-        <section id="hero">
-            <video autoplay muted loop playsinline>
-                <source src="your-video-background.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="overlay"></div>
-            <div id="hero-content">
-                <h1>Temukan Ketenangan di Calao Bali</h1>
-                <p>Retret vila bambu eco-luxury pribadi Anda, dikelilingi oleh alam yang menakjubkan dan pemandangan Gunung Agung.</p>
-                <a href="#booking-cta-section" class="btn-primary">Pesan Sekarang</a>
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+
+
+        <header class="transparent header-light header-float">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-inner">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    <!-- logo begin -->
+                                    <div id="logo">
+                                        calao
+                                    </div>
+                                    <!-- logo close -->
+                                </div>
+
+                                <div class="de-flex-col">
+                                    <div class="de-flex-col header-col-mid">
+                                        <ul id="mainmenu">
+                                            <li><a class="menu-item" href="#">Home</a>
+                                                <ul class="mega">
+                                                    <li>
+                                                        <div class="container">
+                                                            <div class="sb-menu p-4">
+                                                                <div class="row g-4">
+                                                                    <div
+                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
+                                                                        <div
+                                                                            class="relative hover text-center overflow-hidden soft-shadow">
+                                                                            <a class="p-0" href="index.html">
+                                                                                <img src="{{asset('')}}assets/images/demo/homepage-1.webp"
+                                                                                    class="w-100 relative hover-scale-1-1"
+                                                                                    alt="">
+                                                                            </a>
+                                                                        </div>
+                                                                        <h6 class="mt-3">Single Property 1</h6>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
+                                                                        <div
+                                                                            class="relative hover text-center overflow-hidden soft-shadow">
+                                                                            <a class="p-0"
+                                                                                href="01_single-property-2.html">
+                                                                                <img src="{{asset('')}}assets/images/demo/homepage-2.webp"
+                                                                                    class="w-100 relative hover-scale-1-1"
+                                                                                    alt="">
+                                                                            </a>
+                                                                        </div>
+                                                                        <h6 class="mt-3">Single Property 2</h6>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
+                                                                        <div
+                                                                            class="relative hover text-center overflow-hidden soft-shadow">
+                                                                            <a class="p-0"
+                                                                                href="02_apartment-homepage-1.html">
+                                                                                <img src="{{asset('')}}assets/images/demo/homepage-3.webp"
+                                                                                    class="w-100 relative hover-scale-1-1"
+                                                                                    alt="">
+                                                                            </a>
+                                                                        </div>
+                                                                        <h6 class="mt-3">Apartment 1</h6>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
+                                                                        <div
+                                                                            class="relative hover text-center overflow-hidden soft-shadow">
+                                                                            <a class="p-0"
+                                                                                href="02_apartment-homepage-2.html">
+                                                                                <img src="{{asset('')}}assets/images/demo/homepage-4.webp"
+                                                                                    class="w-100 relative hover-scale-1-1"
+                                                                                    alt="">
+                                                                            </a>
+                                                                        </div>
+                                                                        <h6 class="mt-3">Apartment 2</h6>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
+                                                                        <div
+                                                                            class="relative hover text-center overflow-hidden soft-shadow">
+                                                                            <a class="p-0"
+                                                                                href="03_apartment-rent-onepage.html">
+                                                                                <img src="{{asset('')}}assets/images/demo/homepage-5.webp"
+                                                                                    class="w-100 relative hover-scale-1-1"
+                                                                                    alt="">
+                                                                            </a>
+                                                                        </div>
+                                                                        <h6 class="mt-3">Single Apartment</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="menu-item" href="#section-overview">Overview</a></li>
+                                            <li><a class="menu-item" href="#section-rooms">Rooms</a></li>
+                                            <li><a class="menu-item" href="#section-gallery">Gallery</a></li>
+                                            {{-- <li><a class="menu-item" href="#section-floorplan">Floorplan</a></li>
+                                            --}}
+                                            <li><a class="menu-item" href="#section-contact">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="de-flex-col">
+                                    <a class="btn-main fx-slide w-100" href="#section-contact"><span>Schedule a
+                                            Visit</span></a>
+
+                                    <div class="menu_side_area">
+                                        <span id="menu-btn"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="section-hero" class="text-light no-top no-bottom relative overflow-hidden z-1000">
+            <div class="abs w-100 abs-centered z-2">
+                <div class="container">
+                    <div class="spacer-double"></div>
+
+                    <div class="row g-4 align-items-center justify-content-between">
+                        <div class="col-md-5">
+                            <h1 class="mb-0" style="font-family: 'Playfair Display', 'Lora', serif;">Elegant and Comfort
+                                in a Modern Space</h1>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h4 class="fw-400">320 40th Street B4, New York, NY 10019</h4>
+                            <a class="btn-main btn-line bg-blur fx-slide" href="#"><span>Schedule a
+                                    Visit</span></a>&nbsp;
+                            <a class="btn-main btn-line bg-blur fx-slide" href="#"><span>Explore Property</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-center">
+                <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+                    <source src="{{ asset('assets/video/mainvideo2.mp4') }}" type="video/mp4">
+                    Browser Anda tidak mendukung tag video.
+                </video>
+            </div>
+
+            <div class="abs w-100 bottom-0 z-2 pb-4 sm-hide">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6>The Villas</h6>
+                                </div>
+                                <div>
+                                    <h6>Private dining</h6>
+                                </div>
+                                <div>
+                                    <h6>Wellness & Yoga</h6>
+                                </div>
+                                <div>
+                                    <h6>Swimming Pool</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="intro" class="container">
-            <h2>Ketenangan dalam Kemewahan Alami</h2>
-            <p>Di Calao Bali, kami percaya pada kemewahan yang selaras dengan alam. Setiap vila bambu kami dirancang untuk menawarkan privasi dan kenyamanan tak tertandingi, menciptakan tempat perlindungan di mana Anda dapat memulihkan diri, terhubung kembali dengan diri sendiri, dan menikmati keindahan abadi Bali.</p>
+        <section id="section-overview">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-lg-5">
+                        <div class="ps-lg-3">
+                            <div class="subtitle wow fadeInUp" data-wow-delay=".2s">Our Concept</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Inspired by the Calao Bird: Eco-Luxury,
+                                Sustainability, Privacy & Exclusivity</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">
+                                Drawing inspiration from the elegance and uniqueness of the Calao bird, our residence is
+                                designed with an eco-luxury concept that prioritizes sustainability, privacy, and
+                                exclusivity. Every architectural and interior detail harmoniously blends natural beauty
+                                with modern technology, creating a comfortable, environmentally friendly, and tranquil
+                                living space for those who seek a sophisticated lifestyle in harmony with nature.
+                            </p>
+                            <a class="btn-main fx-slide" href="#"><span>Schedule a Visit</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="h-100 rounded-1">
+                                    <img src="{{asset('')}}assets/images/icons-color/1.png"
+                                        class="w-70px mb-4 wow scaleIn" alt="">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Sustainable Design</h4>
+                                        <p class="mb-0">Eco-friendly materials and energy-efficient concepts for a
+                                            greener future.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="h-100 rounded-1">
+                                    <img src="{{asset('')}}assets/images/icons-color/2.png"
+                                        class="w-70px mb-4 wow scaleIn" alt="">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Privacy & Exclusivity</h4>
+                                        <p class="mb-0">Each unit is designed to provide maximum privacy and an
+                                            exclusive atmosphere for residents.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="h-100 rounded-1">
+                                    <img src="{{asset('')}}assets/images/icons-color/3.png"
+                                        class="w-70px mb-4 wow scaleIn" alt="">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Smart Home Technology</h4>
+                                        <p class="mb-0">Comfort and security are integrated with the latest smart home
+                                            systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="h-100 rounded-1">
+                                    <img src="{{asset('')}}assets/images/icons-color/4.png"
+                                        class="w-70px mb-4 wow scaleIn" alt="">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Natural Environment</h4>
+                                        <p class="mb-0">Lush gardens and natural landscapes create a peaceful atmosphere
+                                            in harmony with nature.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <section id="features" class="container">
-            <h2>Fitur Utama Calao Bali</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="icon">🌿</div>
-                    <h3>Vila Bambu Pribadi</h3>
-                    <p>Desain arsitektur bambu yang unik dan berkelanjutan, menyatu sempurna dengan lingkungan.</p>
+        <section id="section-rooms" class="bg-dark section-dark text-light">
+            <div class="container">
+                <div class="row g-4 gx-5 justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Villa Specifications</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Discover Villa</h2>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">⛰️</div>
-                    <h3>Pemandangan Gunung Agung</h3>
-                    <p>Nikmati panorama megah Gunung Agung langsung dari kenyamanan vila Anda.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">🏊</div>
-                    <h3>Kolam Renang Pribadi</h3>
-                    <p>Setiap vila dilengkapi dengan kolam renang pribadi untuk relaksasi eksklusif.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">🍽️</div>
-                    <h3>In-Villa Dining</h3>
-                    <p>Rasakan pengalaman kuliner istimewa di dalam vila Anda, dengan sentuhan inspirasi Maroko.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">🧘</div>
-                    <h3>Retret Kesehatan</h3>
-                    <p>Sesi yoga pribadi, meditasi, dan perawatan spa untuk menyegarkan pikiran dan tubuh.</p>
+                <div class="row g-4 gx-5 justify-content-center wow fadeInUp">
+                    <div class="col-lg-12">
+                        <div class="de-tab pill">
+                            <ul class="d-tab-nav mb-4">
+                                <li class="active-tab">Villa Aurora</li>
+                                <li>Villa Serenity</li>
+                                <li>Villa Harmony</li>
+                                <li>Villa Celeste</li>
+                                <li>Villa Eden</li>
+                                <li>Villa Solace</li>
+                            </ul>
+                            <ul class="d-tab-content pt-3">
+                                <li>
+                                    <div class="row g-4 justify-content-between">
+                                        <div class="col-lg-4">
+                                            <div class="relative bg-dark-2 rounded-1 h-100">
+                                                <h3 class="fs-32 mb-4 p-40">Villa Aurora</h3>
+                                                <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
+                                                    <p class="mb-0">Villa Aurora offers a spacious living area of 1700
+                                                        sqft (158 m²), perfect for families seeking comfort and elegance
+                                                        in every corner.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="relative">
+                                                <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
+                                                    <h4 class="mb-0">1700 sqft</h4>
+                                                </div>
+                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-aurora.webp"
+                                                    class="w-100 rounded-1" alt="Villa Aurora">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row g-4 justify-content-between">
+                                        <div class="col-lg-4">
+                                            <div class="relative bg-dark-2 rounded-1 h-100">
+                                                <h3 class="fs-32 mb-4 p-40">Villa Serenity</h3>
+                                                <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
+                                                    <p class="mb-0">Villa Serenity features 4 luxurious bedrooms, each
+                                                        designed for maximum relaxation and privacy for all family
+                                                        members.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="relative">
+                                                <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
+                                                    <h4 class="mb-0">4 Bedrooms</h4>
+                                                </div>
+                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-serenity.webp"
+                                                    class="w-100 rounded-1" alt="Villa Serenity">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row g-4 justify-content-between">
+                                        <div class="col-lg-4">
+                                            <div class="relative bg-dark-2 rounded-1 h-100">
+                                                <h3 class="fs-32 mb-4 p-40">Villa Harmony</h3>
+                                                <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
+                                                    <p class="mb-0">Villa Harmony is equipped with 3 modern bathrooms,
+                                                        combining style and functionality for your daily needs.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="relative">
+                                                <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
+                                                    <h4 class="mb-0">3 Bathrooms</h4>
+                                                </div>
+                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-harmony.webp"
+                                                    class="w-100 rounded-1" alt="Villa Harmony">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row g-4 justify-content-between">
+                                        <div class="col-lg-4">
+                                            <div class="relative bg-dark-2 rounded-1 h-100">
+                                                <h3 class="fs-32 mb-4 p-40">Villa Celeste</h3>
+                                                <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
+                                                    <p class="mb-0">Villa Celeste boasts a contemporary kitchen with
+                                                        premium appliances, ideal for culinary enthusiasts and family
+                                                        gatherings.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="relative">
+                                                <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
+                                                    <h4 class="mb-0">Modern Kitchen</h4>
+                                                </div>
+                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-celeste.webp"
+                                                    class="w-100 rounded-1" alt="Villa Celeste">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row g-4 justify-content-between">
+                                        <div class="col-lg-4">
+                                            <div class="relative bg-dark-2 rounded-1 h-100">
+                                                <h3 class="fs-32 mb-4 p-40">Villa Eden</h3>
+                                                <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
+                                                    <p class="mb-0">Villa Eden provides a large carport that can fit up
+                                                        to 2 cars, ensuring your vehicles are always safe and secure.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="relative">
+                                                <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
+                                                    <h4 class="mb-0">2 Cars</h4>
+                                                </div>
+                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-eden.webp"
+                                                    class="w-100 rounded-1" alt="Villa Eden">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row g-4 justify-content-between">
+                                        <div class="col-lg-4">
+                                            <div class="relative bg-dark-2 rounded-1 h-100">
+                                                <h3 class="fs-32 mb-4 p-40">Villa Solace</h3>
+                                                <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
+                                                    <p class="mb-0">Villa Solace is designed for tranquility, featuring
+                                                        a private garden and outdoor lounge for your relaxation and
+                                                        leisure.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="relative">
+                                                <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
+                                                    <h4 class="mb-0">Private Garden</h4>
+                                                </div>
+                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-solace.webp"
+                                                    class="w-100 rounded-1" alt="Villa Solace">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="villas" class="container">
-            <h2>Vila-Vila Kami yang Unik</h2>
-            <p>Jelajahi koleksi enam vila bambu pribadi kami, masing-masing dirancang dengan cermat untuk memberikan pengalaman menginap yang tak terlupakan.</p>
-            <div class="preview-grid">
-                <div class="preview-item">
-                    <img src="placeholder-villa-1.jpg" alt="Calao Villa A">
-                    <div class="preview-item-content">
-                        <h3>Vila Arjuna</h3>
-                        <p>Vila luas dengan dua kamar tidur, pemandangan lembah, dan area bersantai pribadi.</p>
-                        <a href="link-to-villa-arjuna.html" class="btn-secondary">Lihat Detail</a>
+        <section id="section-gallery" class="bg-color-op-1">
+            <div class="container">
+                <div class="row g-4 gx-5 justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Dicover Gallery</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Exterior &amp; Interior</h2>
                     </div>
                 </div>
-                <div class="preview-item">
-                    <img src="placeholder-villa-2.jpg" alt="Calao Villa B">
-                    <div class="preview-item-content">
-                        <h3>Vila Bima</h3>
-                        <p>Retret romantis dengan satu kamar tidur, kolam renang pribadi, dan privasi maksimal.</p>
-                        <a href="link-to-villa-bima.html" class="btn-secondary">Lihat Detail</a>
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
+                            <li><a href="#" data-filter="*" class="selected">View All</a></li>
+                            <li><a href="#" data-filter=".exterior">Exterior</a></li>
+                            <li><a href="#" data-filter=".interior">Interior</a></li>
+                            <li><a href="#" data-filter=".facilities">Facilities</a>
+                            <li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="gallery" class="row g-3 wow fadeInUp" data-wow-delay=".3s">
+
+                    <div class="col-md-4 col-sm-6 col-12 item interior">
+                        <a href="{{asset('')}}assets/images/gallery/l1.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l1.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item interior">
+                        <a href="{{asset('')}}assets/images/gallery/l2.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l2.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item interior">
+                        <a href="{{asset('')}}assets/images/gallery/l3.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l3.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item interior">
+                        <a href="{{asset('')}}assets/images/gallery/l4.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l4.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item interior">
+                        <a href="{{asset('')}}assets/images/gallery/l5.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l5.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item exterior">
+                        <a href="{{asset('')}}assets/images/gallery/l6.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l6.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item exterior">
+                        <a href="{{asset('')}}assets/images/gallery/l7.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l7.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item exterior">
+                        <a href="{{asset('')}}assets/images/gallery/l8.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l8.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item facilities">
+                        <a href="{{asset('')}}assets/images/gallery/l9.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l9.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item facilities">
+                        <a href="{{asset('')}}assets/images/gallery/l10.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l10.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item facilities">
+                        <a href="{{asset('')}}assets/images/gallery/l11.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l11.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 item facilities">
+                        <a href="{{asset('')}}assets/images/gallery/l12.webp" class="image-popup d-block hover">
+                            <div class="relative overflow-hidden rounded-1">
+                                <div
+                                    class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
+                                    View
+                                </div>
+                                <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
+                                <img src="{{asset('')}}assets/images/gallery/l12.webp" class="w-100 hover-scale-1-2"
+                                    alt="">
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+        <section>
+
+            <div class="container relative z-2">
+                <div class="row g-4 gx-5 justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Near by Places</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Highlights Nearby</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="overflow-hidden relative rounded-1 text-light text-center wow zoomIn"
+                            data-wow-delay=".0s">
+                            <div class="wow scaleIn overflow-hidden">
+                                <img src="{{asset('')}}assets/images/facilities-nearby/1.webp" class="w-100" alt="">
+                            </div>
+                            <div class="abs z-2 bottom-0 p-30 w-100 text-center hover-op-0">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h3 class="mb-0">Airport</h3>
+                                    <div>18 miles</div>
+                                </div>
+                            </div>
+                            <div class="gradient-edge-bottom abs w-100 h-40 bottom-0"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="overflow-hidden relative rounded-1 text-light text-center wow zoomIn"
+                            data-wow-delay=".0s">
+                            <div class="wow scaleIn overflow-hidden">
+                                <img src="{{asset('')}}assets/images/facilities-nearby/3.webp" class="w-100" alt="">
+                            </div>
+                            <div class="abs z-2 bottom-0 p-30 w-100 text-center hover-op-0">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h3 class="mb-0">University</h3>
+                                    <div>10 miles</div>
+                                </div>
+                            </div>
+                            <div class="gradient-edge-bottom abs w-100 h-40 bottom-0"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="overflow-hidden relative rounded-1 text-light text-center wow zoomIn"
+                            data-wow-delay=".0s">
+                            <div class="wow scaleIn overflow-hidden">
+                                <img src="{{asset('')}}assets/images/facilities-nearby/4.webp" class="w-100" alt="">
+                            </div>
+                            <div class="abs z-2 bottom-0 p-30 w-100 text-center hover-op-0">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h3 class="mb-0">Shopping Mall</h3>
+                                    <div>12 miles</div>
+                                </div>
+                            </div>
+                            <div class="gradient-edge-bottom abs w-100 h-40 bottom-0"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <section aria-label="section" class="p-0 section-dark">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a class="d-block hover popup-youtube" href="https://www.youtube.com/watch?v=C6rf51uHWJg">
+                            <div class="relative overflow-hidden">
+                                <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
+                                    <div class="player circle wow scaleIn"><span></span></div>
+                                </div>
+                                <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
+                                <img src="{{asset('')}}assets/images/background/2.webp" class="w-100 hover-scale-1-1"
+                                    alt="">
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <a href="link-to-all-villas.html" class="btn-primary" style="margin-top: 50px;">Jelajahi Semua Vila</a>
         </section>
 
-        <section id="experiences" class="container">
-            <h2>Pengalaman yang Dikurasi</h2>
-            <p>Tingkatkan pengalaman Anda di Calao Bali dengan berbagai aktivitas yang dirancang untuk memanjakan indra dan menenangkan jiwa.</p>
-            <div class="preview-grid">
-                <div class="preview-item">
-                    <img src="placeholder-experience-1.jpg" alt="Private Dining">
-                    <div class="preview-item-content">
-                        <h3>In-Villa Dining Eksklusif</h3>
-                        <p>Nikmati hidangan lezat yang terinspirasi Maroko dan hidangan lokal Bali di vila Anda.</p>
-                        <a href="link-to-dining-details.html" class="btn-secondary">Selengkapnya</a>
+        <section id="section-contact">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Contact Us</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Schedule a Visit</h2>
                     </div>
                 </div>
-                <div class="preview-item">
-                    <img src="placeholder-experience-2.jpg" alt="Wellness & Yoga">
-                    <div class="preview-item-content">
-                        <h3>Kesehatan & Yoga</h3>
-                        <p>Sesi yoga pribadi, meditasi, dan perawatan spa yang menenangkan di tengah alam.</p>
-                        <a href="link-to-wellness-details.html" class="btn-secondary">Selengkapnya</a>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <img src="{{asset('')}}assets/images/agents/1.webp" class="w-100 rounded-1" alt="">
+
+                            <div class="mt-3">
+                                <h4 class="mb-0">Emily Rodriguez</h4>
+                                <div class="fw-500 id-color">(555) 234-5678</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="preview-item">
-                    <img src="placeholder-experience-3.jpg" alt="Nature Walks">
-                    <div class="preview-item-content">
-                        <h3>Jelajah Alam & Budaya</h3>
-                        <p>Temukan keindahan alam Bali dan kekayaan budayanya melalui tur yang dipandu.</p>
-                        <a href="link-to-excursion-details.html" class="btn-secondary">Selengkapnya</a>
+
+                    <div class="col-md-5">
+                        <form name="bookingForm" id="booking_form" method="post" action="booking.php">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" id="name" class="form-control"
+                                        placeholder="Your Name" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="email" id="email" class="form-control"
+                                        placeholder="Your Email" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div id="date" class="relative input-group date" data-date-format="mm-dd-yyyy">
+                                        <i class="absolute top-0 end-0 id-color pt-3 pe-3 icofont-calendar"></i>
+                                        <input class="form-control" name="date" type="text">
+                                        <span class="input-group-addon"><i
+                                                class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="relative">
+                                        <select name="time" id="time" class="form-control">
+                                            <option value="10:00">10:00</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="20:00">20:00</option>
+                                        </select>
+                                        <i class="absolute top-0 end-0 id-color pt-3 pe-3 icofont-simple-down"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <textarea name="message" id="message" class="form-control h-150px"
+                                        placeholder="Submit Request" required></textarea>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="text-start">
+                                        <div id='submit'>
+                                            <input type='submit' id='send_message' value='Send Message'
+                                                class="btn-main">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="success_message_col" class='success'>
+                            Your message has been sent successfully. Refresh this page if you want to send more
+                            messages.
+                        </div>
+                        <div id="error_message" class='error'>
+                            Sorry there was an error sending your form.
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="link-to-all-experiences.html" class="btn-primary" style="margin-top: 50px;">Lihat Semua Pengalaman</a>
         </section>
 
-        <section id="gallery" class="container">
-            <h2>Galeri Foto & Video</h2>
-            <p>Saksikan keindahan Calao Bali melalui koleksi foto dan video beresolusi tinggi kami.</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="placeholder-gallery-1.jpg" alt="Galeri Calao 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="placeholder-gallery-2.jpg" alt="Galeri Calao 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="placeholder-gallery-3.jpg" alt="Galeri Calao 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="placeholder-gallery-4.jpg" alt="Galeri Calao 4">
-                </div>
-                </div>
-            <a href="link-to-full-gallery.html" class="btn-primary" style="margin-top: 50px;">Lihat Galeri Lengkap</a>
-        </section>
+    </div>
 
-        <section id="booking-cta-section">
-            <h2>Siap Merencanakan Liburan Anda?</h2>
-            <p style="color: var(--color-sandy-beige); margin-bottom: 30px; font-size: 1.1em;">Pesan langsung dengan kami untuk harga terbaik dan ketersediaan waktu nyata.</p>
-            <a href="link-to-booking-engine.html" class="btn-primary">Pesan Sekarang</a>
-        </section>
-    </main>
-
-    <footer>
+    <!-- footer begin -->
+    <footer class="section-dark">
         <div class="container">
-            <p>&copy; 2025 Calao Bali. All rights reserved.</p>
-            <div class="social-links" style="margin-top: 15px;">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i>Instagram</a>
-                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center">
+                        <img src="{{asset('')}}assets/images/logo.webp" class="w-200px" alt="">
+                        <div class="spacer-single"></div>
+                        <div class="fs-16">
+                            712 Jefferson Ave, Brooklyn<br>
+                            New York 11221
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p style="margin-top: 10px;">
-                <a href="privacy-policy.html" style="color: var(--color-white);">Kebijakan Privasi</a> |
-                <a href="terms-conditions.html" style="color: var(--color-white);">Syarat & Ketentuan</a>
-            </p>
+
+            <div class="spacer-double"></div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 mb-sm-30">
+                    <div class="d-flex justify-content-center">
+                        <i class="fs-60 id-color icon_phone"></i>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Call Us</h4>
+                            <p>Call: +1 123 456 789</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-sm-30">
+                    <div class="d-flex justify-content-center">
+                        <i class="fs-60 id-color icon_clock"></i>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Opening Hours</h4>
+                            <p>Mon to Sat 08:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-sm-30">
+                    <div class="d-flex justify-content-center">
+                        <i class="fs-60 id-color icon_mail"></i>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Email Us</h4>
+                            <p>contact@calao.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        Copyright 2025 - calao by Designesia
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="social-icons mb-sm-30 text-center">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    <!-- footer end -->
 
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="{{asset('')}}assets/js/vendors.js"></script>
+    <script src="{{asset('')}}assets/js/designesia.js"></script>
+    <script src="{{asset('')}}assets/js/validation-booking.js"></script>
+    <script src="{{asset('')}}assets/js/swiper.js"></script>
+    <script src="{{asset('')}}assets/js/custom-swiper-2.js"></script>
+
+    <!-- datepicker begin -->
     <script>
-        // Header Scroll Effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
+        $(function () {
+            $("#date").datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date());
         });
 
-        // Hamburger Menu Toggle
-        const hamburger = document.querySelector('.hamburger-menu');
-        const nav = document.querySelector('nav');
-
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            hamburger.classList.toggle('active'); // Untuk animasi hamburger
-        });
-
-        // Menutup menu saat link diklik (opsional, untuk SPA)
-        document.querySelectorAll('nav ul li a').forEach(item => {
-            item.addEventListener('click', () => {
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-            });
-        });
-
-        // Tambahan untuk animasi hamburger menu
-        // Styling untuk animasi hamburger menu (tambahkan di dalam <style> tag)
-        /*
-        .hamburger-menu.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-        .hamburger-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger-menu.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-        */
     </script>
-    </body>
+    <!-- datepicker close -->
+
+</body>
+
 </html>
