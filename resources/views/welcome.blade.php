@@ -54,100 +54,28 @@
 
                                 <div class="de-flex-col">
                                     <div class="de-flex-col header-col-mid">
-                                        <ul id="mainmenu">
-                                            <li><a class="menu-item" href="#">Home</a>
-                                                <ul class="mega">
-                                                    <li>
-                                                        <div class="container">
-                                                            <div class="sb-menu p-4">
-                                                                <div class="row g-4">
-                                                                    <div
-                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
-                                                                        <div
-                                                                            class="relative hover text-center overflow-hidden soft-shadow">
-                                                                            <a class="p-0" href="index.html">
-                                                                                <img src="{{asset('')}}assets/images/demo/homepage-1.webp"
-                                                                                    class="w-100 relative hover-scale-1-1"
-                                                                                    alt="">
-                                                                            </a>
-                                                                        </div>
-                                                                        <h6 class="mt-3">Single Property 1</h6>
-                                                                    </div>
-
-                                                                    <div
-                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
-                                                                        <div
-                                                                            class="relative hover text-center overflow-hidden soft-shadow">
-                                                                            <a class="p-0"
-                                                                                href="01_single-property-2.html">
-                                                                                <img src="{{asset('')}}assets/images/demo/homepage-2.webp"
-                                                                                    class="w-100 relative hover-scale-1-1"
-                                                                                    alt="">
-                                                                            </a>
-                                                                        </div>
-                                                                        <h6 class="mt-3">Single Property 2</h6>
-                                                                    </div>
-
-                                                                    <div
-                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
-                                                                        <div
-                                                                            class="relative hover text-center overflow-hidden soft-shadow">
-                                                                            <a class="p-0"
-                                                                                href="02_apartment-homepage-1.html">
-                                                                                <img src="{{asset('')}}assets/images/demo/homepage-3.webp"
-                                                                                    class="w-100 relative hover-scale-1-1"
-                                                                                    alt="">
-                                                                            </a>
-                                                                        </div>
-                                                                        <h6 class="mt-3">Apartment 1</h6>
-                                                                    </div>
-
-                                                                    <div
-                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
-                                                                        <div
-                                                                            class="relative hover text-center overflow-hidden soft-shadow">
-                                                                            <a class="p-0"
-                                                                                href="02_apartment-homepage-2.html">
-                                                                                <img src="{{asset('')}}assets/images/demo/homepage-4.webp"
-                                                                                    class="w-100 relative hover-scale-1-1"
-                                                                                    alt="">
-                                                                            </a>
-                                                                        </div>
-                                                                        <h6 class="mt-3">Apartment 2</h6>
-                                                                    </div>
-
-                                                                    <div
-                                                                        class="col-lg-1-5 col-md-4 col-sm-6 text-center">
-                                                                        <div
-                                                                            class="relative hover text-center overflow-hidden soft-shadow">
-                                                                            <a class="p-0"
-                                                                                href="03_apartment-rent-onepage.html">
-                                                                                <img src="{{asset('')}}assets/images/demo/homepage-5.webp"
-                                                                                    class="w-100 relative hover-scale-1-1"
-                                                                                    alt="">
-                                                                            </a>
-                                                                        </div>
-                                                                        <h6 class="mt-3">Single Apartment</h6>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
+                                        <ul id="mainmenu" style="font-family: 'Playfair Display', 'Lora', serif;">
+                                            <li>
+                                                <a class="menu-item" href="{{ url('/') }}">Home</a>
                                             </li>
-                                            <li><a class="menu-item" href="#section-overview">Overview</a></li>
-                                            <li><a class="menu-item" href="#section-rooms">Rooms</a></li>
-                                            <li><a class="menu-item" href="#section-gallery">Gallery</a></li>
-                                            {{-- <li><a class="menu-item" href="#section-floorplan">Floorplan</a></li>
-                                            --}}
-                                            <li><a class="menu-item" href="#section-contact">Contact</a></li>
+                                            <li>
+                                                <a class="menu-item" href="{{ route('our-concept') }}">Our Concept</a>
+                                            </li>
+                                            <li>
+                                                <a class="menu-item" href="{{ route('room') }}">Rooms</a>
+                                            </li>
+                                            <li>
+                                                <a class="menu-item" href="{{ route('gallery') }}">Gallery</a>
+                                            </li>
+                                            <li>
+                                                <a class="menu-item" href="{{ route('contact-us') }}">Contact</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
 
                                 <div class="de-flex-col">
-                                    <a class="btn-main fx-slide w-100" href="#section-contact"><span>Schedule a
-                                            Visit</span></a>
+                                    <a class="btn-main fx-slide w-100" href="#section-contact"><span>Book Now</span></a>
 
                                     <div class="menu_side_area">
                                         <span id="menu-btn"></span>
@@ -216,17 +144,20 @@
                 <div class="row g-4 justify-content-between">
                     <div class="col-lg-5">
                         <div class="ps-lg-3">
-                            <div class="subtitle wow fadeInUp" data-wow-delay=".2s">Our Concept</div>
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Inspired by the Calao Bird: Eco-Luxury,
-                                Sustainability, Privacy & Exclusivity</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".6s">
-                                Drawing inspiration from the elegance and uniqueness of the Calao bird, our residence is
-                                designed with an eco-luxury concept that prioritizes sustainability, privacy, and
-                                exclusivity. Every architectural and interior detail harmoniously blends natural beauty
-                                with modern technology, creating a comfortable, environmentally friendly, and tranquil
-                                living space for those who seek a sophisticated lifestyle in harmony with nature.
+                            <div class="subtitle wow fadeInUp" data-wow-delay=".2s" sty>Our Concept</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s"
+                                style="font-family: 'Playfair Display', 'Lora', serif;">
+                                Inspired by the Calao Bird: Eco-Luxury, Sustainability, Privacy & Exclusivity
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s"
+                                style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
+                                Terinspirasi dari keanggunan dan keunikan burung Calao, hunian kami dirancang dengan
+                                konsep eco-luxury yang mengutamakan keberlanjutan, privasi, dan eksklusivitas. Setiap
+                                detail arsitektur dan interior berpadu harmonis antara keindahan alam dan teknologi
+                                modern, menciptakan ruang tinggal yang nyaman, ramah lingkungan, dan tenang bagi mereka
+                                yang mendambakan gaya hidup berkelas selaras dengan alam.
                             </p>
-                            <a class="btn-main fx-slide" href="#"><span>Schedule a Visit</span></a>
+                            <a class="btn-main fx-slide" href="#"><span>Book Now</span></a>
                         </div>
                     </div>
 
@@ -237,9 +168,13 @@
                                     <img src="{{asset('')}}assets/images/icons-color/1.png"
                                         class="w-70px mb-4 wow scaleIn" alt="">
                                     <div class="relative wow fadeInUp">
-                                        <h4>Sustainable Design</h4>
-                                        <p class="mb-0">Eco-friendly materials and energy-efficient concepts for a
-                                            greener future.</p>
+                                        <h4 style="font-family: 'Playfair Display', 'Lora', serif;">Strategic Location
+                                        </h4>
+                                        <p class="mb-0"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">Our
+                                            resort or villa is located in a prime area, easily
+                                            accessible and close to various tourist destinations and public facilities.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -249,9 +184,12 @@
                                     <img src="{{asset('')}}assets/images/icons-color/2.png"
                                         class="w-70px mb-4 wow scaleIn" alt="">
                                     <div class="relative wow fadeInUp">
-                                        <h4>Privacy & Exclusivity</h4>
-                                        <p class="mb-0">Each unit is designed to provide maximum privacy and an
-                                            exclusive atmosphere for residents.</p>
+                                        <h4 style="font-family: 'Playfair Display', 'Lora', serif;">Complete Facilities
+                                        </h4>
+                                        <p class="mb-0"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">Equipped
+                                            with a swimming pool, restaurant, spa, and children's
+                                            playground for the comfort of the whole family.</p>
                                     </div>
                                 </div>
                             </div>
@@ -261,9 +199,12 @@
                                     <img src="{{asset('')}}assets/images/icons-color/3.png"
                                         class="w-70px mb-4 wow scaleIn" alt="">
                                     <div class="relative wow fadeInUp">
-                                        <h4>Smart Home Technology</h4>
-                                        <p class="mb-0">Comfort and security are integrated with the latest smart home
-                                            systems.</p>
+                                        <h4 style="font-family: 'Playfair Display', 'Lora', serif;">Modern & Natural
+                                            Design</h4>
+                                        <p class="mb-0"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">Combining
+                                            modern design with natural touches, creating a
+                                            comfortable and calming atmosphere.</p>
                                     </div>
                                 </div>
                             </div>
@@ -273,9 +214,12 @@
                                     <img src="{{asset('')}}assets/images/icons-color/4.png"
                                         class="w-70px mb-4 wow scaleIn" alt="">
                                     <div class="relative wow fadeInUp">
-                                        <h4>Natural Environment</h4>
-                                        <p class="mb-0">Lush gardens and natural landscapes create a peaceful atmosphere
-                                            in harmony with nature.</p>
+                                        <h4 style="font-family: 'Playfair Display', 'Lora', serif;">Professional Service
+                                        </h4>
+                                        <p class="mb-0"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">Our staff
+                                            is ready to serve you with friendliness and
+                                            professionalism to ensure an unforgettable stay experience.</p>
                                     </div>
                                 </div>
                             </div>
@@ -286,18 +230,19 @@
             </div>
         </section>
 
-        <section id="section-rooms" class="bg-dark section-dark text-light">
+        <section id="section-rooms" style="background-color: #F5F2EA; color:black;">
             <div class="container">
                 <div class="row g-4 gx-5 justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Villa Specifications</div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Discover Villa</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s"
+                            style="font-family: 'Playfair Display', 'Lora', serif;">Discover Villa</h2>
                     </div>
                 </div>
                 <div class="row g-4 gx-5 justify-content-center wow fadeInUp">
                     <div class="col-lg-12">
                         <div class="de-tab pill">
-                            <ul class="d-tab-nav mb-4">
+                            <ul class="d-tab-nav mb-4" style="font-family: 'Playfair Display', 'Lora', serif;">
                                 <li class="active-tab">Villa Aurora</li>
                                 <li>Villa Serenity</li>
                                 <li>Villa Harmony</li>
@@ -308,7 +253,8 @@
                             <ul class="d-tab-content pt-3">
                                 <li>
                                     <div class="row g-4 justify-content-between">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                             <div class="relative bg-dark-2 rounded-1 h-100">
                                                 <h3 class="fs-32 mb-4 p-40">Villa Aurora</h3>
                                                 <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
@@ -323,7 +269,7 @@
                                                 <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
                                                     <h4 class="mb-0">1700 sqft</h4>
                                                 </div>
-                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-aurora.webp"
+                                                <img src="https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg"
                                                     class="w-100 rounded-1" alt="Villa Aurora">
                                             </div>
                                         </div>
@@ -331,7 +277,8 @@
                                 </li>
                                 <li>
                                     <div class="row g-4 justify-content-between">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                             <div class="relative bg-dark-2 rounded-1 h-100">
                                                 <h3 class="fs-32 mb-4 p-40">Villa Serenity</h3>
                                                 <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
@@ -341,12 +288,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8">
+                                        <div class="col-lg-8"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                             <div class="relative">
                                                 <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
                                                     <h4 class="mb-0">4 Bedrooms</h4>
                                                 </div>
-                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-serenity.webp"
+                                                <img src="https://images.pexels.com/photos/279574/pexels-photo-279574.jpeg"
                                                     class="w-100 rounded-1" alt="Villa Serenity">
                                             </div>
                                         </div>
@@ -354,7 +302,8 @@
                                 </li>
                                 <li>
                                     <div class="row g-4 justify-content-between">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                             <div class="relative bg-dark-2 rounded-1 h-100">
                                                 <h3 class="fs-32 mb-4 p-40">Villa Harmony</h3>
                                                 <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
@@ -368,7 +317,7 @@
                                                 <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
                                                     <h4 class="mb-0">3 Bathrooms</h4>
                                                 </div>
-                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-harmony.webp"
+                                                <img src="https://images.pexels.com/photos/8844759/pexels-photo-8844759.jpeg"
                                                     class="w-100 rounded-1" alt="Villa Harmony">
                                             </div>
                                         </div>
@@ -376,7 +325,8 @@
                                 </li>
                                 <li>
                                     <div class="row g-4 justify-content-between">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                             <div class="relative bg-dark-2 rounded-1 h-100">
                                                 <h3 class="fs-32 mb-4 p-40">Villa Celeste</h3>
                                                 <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
@@ -387,11 +337,12 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
-                                            <div class="relative">
+                                            <div class="relative"
+                                                style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                                 <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
                                                     <h4 class="mb-0">Modern Kitchen</h4>
                                                 </div>
-                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-celeste.webp"
+                                                <img src="https://images.pexels.com/photos/2724079/pexels-photo-2724079.jpeg"
                                                     class="w-100 rounded-1" alt="Villa Celeste">
                                             </div>
                                         </div>
@@ -399,7 +350,8 @@
                                 </li>
                                 <li>
                                     <div class="row g-4 justify-content-between">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                             <div class="relative bg-dark-2 rounded-1 h-100">
                                                 <h3 class="fs-32 mb-4 p-40">Villa Eden</h3>
                                                 <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
@@ -410,11 +362,12 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
-                                            <div class="relative">
+                                            <div class="relative"
+                                                style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                                 <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
                                                     <h4 class="mb-0">2 Cars</h4>
                                                 </div>
-                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-eden.webp"
+                                                <img src="https://images.pexels.com/photos/31587587/pexels-photo-31587587.jpeg"
                                                     class="w-100 rounded-1" alt="Villa Eden">
                                             </div>
                                         </div>
@@ -422,7 +375,8 @@
                                 </li>
                                 <li>
                                     <div class="row g-4 justify-content-between">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4"
+                                            style="font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;">
                                             <div class="relative bg-dark-2 rounded-1 h-100">
                                                 <h3 class="fs-32 mb-4 p-40">Villa Solace</h3>
                                                 <div class="abs p-sm-relative bottom-0 p-40 start-0 w-100">
@@ -437,7 +391,7 @@
                                                 <div class="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
                                                     <h4 class="mb-0">Private Garden</h4>
                                                 </div>
-                                                <img src="{{asset('')}}assets/images/discover-rooms/villa-solace.webp"
+                                                <img src="https://images.pexels.com/photos/28843968/pexels-photo-28843968.jpeg"
                                                     class="w-100 rounded-1" alt="Villa Solace">
                                             </div>
                                         </div>
@@ -454,19 +408,21 @@
             <div class="container">
                 <div class="row g-4 gx-5 justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Dicover Gallery</div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Exterior &amp; Interior</h2>
+                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Discover Gallery</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s"
+                            style="font-family: 'Playfair Display', 'Lora', serif;">Experience the Beauty of Bali Villas
+                        </h2>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
+                        <ul id="filters" class="wow fadeInUp" data-wow-delay="0s"
+                            style="font-family: 'Playfair Display', 'Lora', serif;">
                             <li><a href="#" data-filter="*" class="selected">View All</a></li>
                             <li><a href="#" data-filter=".exterior">Exterior</a></li>
                             <li><a href="#" data-filter=".interior">Interior</a></li>
-                            <li><a href="#" data-filter=".facilities">Facilities</a>
-                            <li>
+                            <li><a href="#" data-filter=".facilities">Facilities</a></li>
                         </ul>
                     </div>
                 </div>
@@ -478,11 +434,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l1.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Spacious Living Room - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -492,11 +448,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l2.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Modern Kitchen - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -506,11 +462,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l3.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Elegant Bedroom - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -520,11 +476,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l4.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Luxurious Bathroom - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -534,11 +490,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l5.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Cozy Lounge Area - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -548,11 +504,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l6.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Tropical Garden - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -562,11 +518,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l7.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Private Pool - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -576,11 +532,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l8.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Sunset View - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -590,11 +546,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l9.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Spa & Wellness - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -604,11 +560,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l10.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Outdoor Dining - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -618,11 +574,11 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l11.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Yoga Pavilion - Bali Villa">
                             </div>
                         </a>
                     </div>
@@ -632,88 +588,23 @@
                             <div class="relative overflow-hidden rounded-1">
                                 <div
                                     class="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                                    View
+                                    View Photo
                                 </div>
                                 <div class="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2"></div>
                                 <img src="{{asset('')}}assets/images/gallery/l12.webp" class="w-100 hover-scale-1-2"
-                                    alt="">
+                                    alt="Traditional Balinese Decor - Bali Villa">
                             </div>
                         </a>
                     </div>
 
                 </div>
-
-
             </div>
         </section>
 
 
 
 
-        <section>
 
-            <div class="container relative z-2">
-                <div class="row g-4 gx-5 justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Near by Places</div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Highlights Nearby</h2>
-                    </div>
-                </div>
-
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="overflow-hidden relative rounded-1 text-light text-center wow zoomIn"
-                            data-wow-delay=".0s">
-                            <div class="wow scaleIn overflow-hidden">
-                                <img src="{{asset('')}}assets/images/facilities-nearby/1.webp" class="w-100" alt="">
-                            </div>
-                            <div class="abs z-2 bottom-0 p-30 w-100 text-center hover-op-0">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h3 class="mb-0">Airport</h3>
-                                    <div>18 miles</div>
-                                </div>
-                            </div>
-                            <div class="gradient-edge-bottom abs w-100 h-40 bottom-0"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="overflow-hidden relative rounded-1 text-light text-center wow zoomIn"
-                            data-wow-delay=".0s">
-                            <div class="wow scaleIn overflow-hidden">
-                                <img src="{{asset('')}}assets/images/facilities-nearby/3.webp" class="w-100" alt="">
-                            </div>
-                            <div class="abs z-2 bottom-0 p-30 w-100 text-center hover-op-0">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h3 class="mb-0">University</h3>
-                                    <div>10 miles</div>
-                                </div>
-                            </div>
-                            <div class="gradient-edge-bottom abs w-100 h-40 bottom-0"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="overflow-hidden relative rounded-1 text-light text-center wow zoomIn"
-                            data-wow-delay=".0s">
-                            <div class="wow scaleIn overflow-hidden">
-                                <img src="{{asset('')}}assets/images/facilities-nearby/4.webp" class="w-100" alt="">
-                            </div>
-                            <div class="abs z-2 bottom-0 p-30 w-100 text-center hover-op-0">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h3 class="mb-0">Shopping Mall</h3>
-                                    <div>12 miles</div>
-                                </div>
-                            </div>
-                            <div class="gradient-edge-bottom abs w-100 h-40 bottom-0"></div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </section>
 
         <section aria-label="section" class="p-0 section-dark">
             <div class="container-fluid">
@@ -734,90 +625,23 @@
             </div>
         </section>
 
-        <section id="section-contact">
+        <section id="section-cta-booking">
             <div class="container">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Contact Us</div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Schedule a Visit</h2>
-                    </div>
-                </div>
-
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-3">
-                        <div class="text-center">
-                            <img src="{{asset('')}}assets/images/agents/1.webp" class="w-100 rounded-1" alt="">
-
-                            <div class="mt-3">
-                                <h4 class="mb-0">Emily Rodriguez</h4>
-                                <div class="fw-500 id-color">(555) 234-5678</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-5">
-                        <form name="bookingForm" id="booking_form" method="post" action="booking.php">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <input type="text" name="name" id="name" class="form-control"
-                                        placeholder="Your Name" required>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <input type="text" name="email" id="email" class="form-control"
-                                        placeholder="Your Email" required>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div id="date" class="relative input-group date" data-date-format="mm-dd-yyyy">
-                                        <i class="absolute top-0 end-0 id-color pt-3 pe-3 icofont-calendar"></i>
-                                        <input class="form-control" name="date" type="text">
-                                        <span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-calendar"></i></span>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="relative">
-                                        <select name="time" id="time" class="form-control">
-                                            <option value="10:00">10:00</option>
-                                            <option value="11:00">11:00</option>
-                                            <option value="12:00">12:00</option>
-                                            <option value="13:00">13:00</option>
-                                            <option value="14:00">14:00</option>
-                                            <option value="15:00">15:00</option>
-                                            <option value="16:00">16:00</option>
-                                            <option value="17:00">17:00</option>
-                                            <option value="18:00">18:00</option>
-                                            <option value="19:00">19:00</option>
-                                            <option value="20:00">20:00</option>
-                                        </select>
-                                        <i class="absolute top-0 end-0 id-color pt-3 pe-3 icofont-simple-down"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <textarea name="message" id="message" class="form-control h-150px"
-                                        placeholder="Submit Request" required></textarea>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="text-start">
-                                        <div id='submit'>
-                                            <input type='submit' id='send_message' value='Send Message'
-                                                class="btn-main">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div id="success_message_col" class='success'>
-                            Your message has been sent successfully. Refresh this page if you want to send more
-                            messages.
-                        </div>
-                        <div id="error_message" class='error'>
-                            Sorry there was an error sending your form.
-                        </div>
+                <div class="row justify-content-center align-items-center py-5">
+                    <div class="col-lg-8 text-center">
+                        {{-- <img src="{{asset('')}}assets/images/cta-booking.webp" alt="Book Your Villa"
+                            class="mb-4 w-200px wow fadeInUp" data-wow-delay=".05s"> --}}
+                        <h2 class="mb-3 wow fadeInUp" data-wow-delay=".1s"
+                            style="font-family: 'Playfair Display', 'Lora', serif;">Book Your Villa Now!</h2>
+                        <p class="fs-18 mb-4 wow fadeInUp" data-wow-delay=".2s">
+                            Enjoy the best stay experience at our villa. Click the button below to make your reservation
+                            now and get a special offer!
+                        </p>
+                        <a href="https://wa.me/6281234567890?text=Hello%2C%20I%20would%20like%20to%20book%20the%20villa"
+                            target="_blank" class="btn-main btn-lg wow fadeInUp  background-color: #F5F2EA;"
+                            data-wow-delay=".3s" style="font-family: 'Playfair Display', 'Lora', serif;">
+                            Book Now via WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
@@ -826,7 +650,7 @@
     </div>
 
     <!-- footer begin -->
-    <footer class="section-dark">
+    {{-- <footer class="section-dark">
         <div class="container">
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8">
@@ -894,7 +718,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> --}}
     <!-- footer end -->
 
     <!-- Javascript Files
