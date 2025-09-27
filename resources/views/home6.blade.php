@@ -350,7 +350,7 @@
     <section class="hero">
         <div class="hero-video-wrapper">
             <video playsinline autoplay muted loop poster="hero-poster.jpg">
-                <source src="https://cdn.pixabay.com/video/2024/03/11/202610-922650529_large.mp4" type="video/mp4">
+                <source src="{{ asset('assets/video/baliview.mp4') }}" type="video/mp4">
             </video>
         </div>
         <div class="hero-content">

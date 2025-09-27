@@ -1,0 +1,532 @@
+/* --- Tambahkan ini di bagian paling atas --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Variabel Warna & Font --- */
+:root {
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Montserrat", sans-serif;
+    --color-accent: #d8b29a; /* Terracotta */
+    --color-bg: #f5f2ea; /* Sandy Beige */
+    --color-dark: #333333; /* Dark Charcoal */
+    --color-white: #ffffff;
+}
+
+/* --- Reset & Gaya Dasar --- */
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-top: 0;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --- Tombol & Link Global --- */
+.button {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 14px 35px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.button:hover {
+    background-color: #c59f85;
+    transform: translateY(-3px);
+}
+.link-arrow {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+/* --- Header --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 2px;
+}
+.header.scrolled .nav-logo,
+.header.scrolled .nav-menu a {
+    color: var(--color-dark);
+}
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2.5rem;
+}
+.nav-menu a {
+    color: var(--color-white);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+.nav-menu a:hover {
+    color: var(--color-accent);
+}
+.nav-button {
+    background: transparent;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    padding: 10px 25px;
+}
+.header.scrolled .nav-button {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+.nav-button:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #000;
+}
+.hero-video-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+.animate-on-load {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+.hero-content h1.animate-on-load {
+    animation-delay: 0.5s;
+}
+.hero-content p.animate-on-load {
+    animation-delay: 0.8s;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Bagian Umum & Teks Tengah --- */
+.text-center-section {
+    padding: 6rem 0;
+    text-align: center;
+}
+.text-center-section .container {
+    max-width: 800px;
+}
+.text-center-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Bagian Konsep Baru (OUR CONCEPT) --- */
+.concept-section {
+    padding: 8rem 0;
+    background-color: var(
+        --color-bg
+    ); /* Menggunakan Sandy Beige sebagai latar belakang */
+}
+.concept-section .section-title {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.concept-intro {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 5rem auto;
+    text-align: center;
+}
+.concept-story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem; /* Jarak antar kolom */
+    align-items: flex-start; /* Elemen di awal kolom */
+    margin-bottom: 6rem;
+}
+.story-left,
+.story-right {
+    text-align: left; /* Teks default ke kiri */
+}
+.concept-story-grid .story-image {
+    width: 100%;
+    height: 450px; /* Tinggi gambar agar seragam */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+.concept-story-grid h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+.concept-story-grid p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* --- Pratinjau Villa --- */
+.villas-preview-section {
+    background: var(--color-white);
+    padding-bottom: 6rem;
+} /* Mengubah background menjadi putih */
+.villa-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.villa-card {
+    background: var(--color-white);
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.villa-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+.villa-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.villa-card .link-arrow {
+    margin-bottom: 2rem;
+    display: inline-block; /* Agar margin-bottom bekerja */
+}
+
+/* --- Pratinjau Experience --- */
+.experience-preview-section {
+    padding: 6rem 0;
+    background: var(--color-bg);
+} /* Menambahkan background beige */
+.experience-preview-section .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+.experience-image {
+    flex: 1;
+}
+.experience-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+.experience-text {
+    flex: 1;
+}
+.experience-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Teaser Galeri --- */
+.gallery-teaser-section {
+    background: var(--color-white);
+    padding-bottom: 6rem;
+} /* Mengubah background menjadi putih */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+}
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.8);
+    transition: all 0.4s ease;
+}
+.gallery-item:hover img {
+    filter: saturate(1);
+    transform: scale(1.05);
+}
+
+/* --- Bagian CTA --- */
+.cta-section {
+    position: relative;
+    padding: 8rem 0;
+    text-align: center;
+    color: var(--color-white);
+    background: url("https://images.unsplash.com/photo-1537726235470-8504e3b7766c?q=80&w=1950&auto=format&fit=crop")
+        no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Ini menciptakan efek parallax */
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+        51,
+        51,
+        51,
+        0.6
+    ); /* Overlay gelap untuk kontras teks */
+    z-index: 1;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--color-white);
+    opacity: 0.95;
+}
+
+.cta-section .button {
+    background: var(--color-white);
+    color: var(--color-accent);
+    transform: scale(1.1); /* Membuat tombol sedikit lebih besar */
+}
+
+.cta-section .button:hover {
+    background-color: #f0f0f0;
+    color: #b9896c;
+}
+/* GANTI STYLE .footer LAMA ANDA DENGAN INI */
+.footer {
+    background: var(--color-dark);
+    color: #a0a0a0;
+    padding: 6rem 0 2rem;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.footer-col h4 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--color-white);
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    font-family: var(--font-heading) !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+}
+
+.footer-col p {
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col a {
+    color: #a0a0a0;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--color-accent);
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 2rem;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* --- Animasi Scroll --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design (Tambahan) --- */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .concept-story-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .concept-story-grid .story-image {
+        height: 350px;
+    }
+    .villa-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .experience-preview-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .nav-menu {
+        display: none; /* Atau buat menu hamburger */
+    }
+    .nav-logo,
+    .nav-button {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .concept-section .section-title {
+        font-size: 2rem;
+    }
+    .concept-intro {
+        font-size: 1rem;
+    }
+    .concept-story-grid h3 {
+        font-size: 1.5rem;
+    }
+    .villa-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .text-center-section {
+        padding: 4rem 0;
+    }
+}

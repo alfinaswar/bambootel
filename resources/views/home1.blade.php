@@ -497,10 +497,26 @@
 
     <main>
         <section id="hero">
-            <video autoplay muted loop playsinline>
-                <source src="{{asset('assets/video/baliview.mp4')}}" type="video/mp4">
-                Your browser does not support the video tag.
+            <video id="hero-video" autoplay muted loop playsinline>
+                <source src="{{ asset('assets/video/baliview.mp4') }}" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
             </video>
+            <script>
+                // Memastikan video diputar secara otomatis di berbagai browser
+                document.addEventListener('DOMContentLoaded', function () {
+                    var video = document.getElementById('hero-video');
+                    if (video) {
+                        var playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(function (error) {
+                                // Jika autoplay gagal (misal, karena kebijakan browser), coba play manual
+                                video.muted = true;
+                                video.play();
+                            });
+                        }
+                    }
+                });
+            </script>
             <div class="overlay"></div>
             <div id="hero-content" class="animate-on-scroll">
                 <h1>Find Serenity at Calao Bali</h1>

@@ -1,0 +1,493 @@
+/* --- Root Variables (Brand Identity) --- */
+:root {
+    --color-white: #ffffff;
+    --color-terracotta: #d8b29a;
+    --color-beige: #f5f2ea;
+    --color-charcoal: #333333;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Montserrat", sans-serif;
+}
+
+/* --- Basic Reset & Body Styling --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-charcoal);
+    background-color: var(--color-white);
+    overflow-x: hidden; /* Prevent horizontal scroll from AOS animations */
+}
+
+/* --- Global Elements & Utilities --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto; /* Ensure images scale correctly */
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+.section {
+    padding: 6rem 0;
+}
+.bg-beige {
+    background-color: var(--color-beige);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.section-header p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.btn-primary {
+    background-color: var(--color-terracotta);
+    color: var(--color-white);
+}
+.btn-primary:hover {
+    background-color: #c5a088;
+}
+.btn-secondary {
+    border-color: var(--color-terracotta);
+    color: var(--color-terracotta);
+}
+.btn-secondary:hover {
+    background-color: var(--color-terracotta);
+    color: var(--color-white);
+}
+.btn-terracotta {
+    background: transparent;
+    color: var(--color-terracotta);
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-terracotta); /* Subtle underline */
+}
+.btn-terracotta:hover {
+    border-color: transparent;
+    opacity: 0.8;
+}
+.btn-large {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+}
+
+/* --- Header & Navigation --- */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 0;
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+#main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-decoration: none;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.nav-menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+}
+.nav-menu a:hover {
+    border-color: var(--color-terracotta);
+}
+/* Header scroll effect (add with JS) */
+#main-header.scrolled {
+    background-color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+#main-header.scrolled .logo,
+#main-header.scrolled .nav-menu a {
+    color: var(--color-charcoal);
+}
+#main-header.scrolled .nav-menu a:hover {
+    border-color: var(--color-terracotta);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    object-fit: cover; /* Ensure video covers the area */
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+.hero-content h1 {
+    margin-bottom: 1rem;
+}
+.hero-content p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Features Section --- */
+.features {
+    padding: 4rem 0;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    text-align: center;
+}
+.feature-item svg {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem auto;
+    stroke: var(--color-terracotta); /* Icon color */
+    fill: none;
+}
+.feature-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Concept Section --- */
+.concept-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.concept-text h2 {
+    color: var(--color-terracotta);
+}
+.concept-text h3 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+.concept-text p {
+    margin-bottom: 1.5rem;
+}
+.concept-image img {
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Villas Section --- */
+.villas-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        3,
+        1fr
+    ); /* Changed to 3 columns for better flow */
+    gap: 2rem;
+}
+.villa-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.villa-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.villa-card-content {
+    padding: 1.5rem;
+}
+.villa-card-content h3 {
+    margin-bottom: 0.5rem;
+}
+.villa-card-content p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* --- Experiences Section --- */
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.experience-item {
+    position: relative;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    color: var(--color-white);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+.experience-item:hover {
+    transform: scale(1.05);
+}
+.experience-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0) 60%
+    );
+    transition: background 0.3s ease;
+}
+.experience-item:hover::after {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.1) 60%
+    );
+}
+.experience-item h3 {
+    position: relative;
+    z-index: 1;
+    font-size: 1.8rem;
+}
+
+/* --- Gallery Section --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    background: var(--color-charcoal)
+        url("https://via.placeholder.com/1920x500.png?text=Lush+Bali+Nature")
+        no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect */
+    background-blend-mode: overlay;
+    color: var(--color-white);
+    text-align: center;
+    padding: 6rem 0;
+}
+.cta-section p {
+    font-size: 1.2rem;
+    margin: 1rem auto 2rem auto;
+    max-width: 700px;
+}
+
+/* --- Footer & Contact --- */
+footer {
+    background-color: var(--color-charcoal);
+    color: #aab;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding-bottom: 4rem;
+}
+.footer-col h3 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+.footer-col p {
+    margin-bottom: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: var(--color-white);
+    transition: border-color 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-terracotta);
+    outline: none;
+}
+.contact-form .btn {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-terracotta);
+    color: var(--color-white);
+}
+.contact-form .btn:hover {
+    background-color: #c5a088;
+}
+
+.map-placeholder {
+    height: 200px;
+    background-color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid #444;
+}
+.footer-bottom a {
+    color: var(--color-terracotta);
+    text-decoration: none;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.4rem;
+    }
+    .concept-layout {
+        grid-template-columns: 1fr;
+    }
+    .concept-image {
+        order: 2;
+    } /* Image below text on smaller screens */
+    .concept-text {
+        order: 1;
+        text-align: center;
+    }
+    .villas-grid,
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .section {
+        padding: 3rem 0;
+    }
+    .nav-menu {
+        display: none;
+    } /* Basic setup for mobile menu, needs JS for toggle */
+    .features-grid,
+    .villas-grid,
+    .experiences-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    header {
+        padding: 1rem 0;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .btn-large {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    .footer-col {
+        text-align: center;
+    }
+}
