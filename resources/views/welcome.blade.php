@@ -113,6 +113,47 @@
             box-shadow: 0 6px 24px rgba(58, 134, 255, 0.13);
         }
 
+        .review-btn {
+            margin-top: 32px;
+            padding: 13px 0;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #00b894 60%, #00cec9 100%);
+            color: #fff;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.22s, transform 0.18s, box-shadow 0.18s;
+            box-shadow: 0 3px 14px rgba(0, 184, 148, 0.10);
+            text-decoration: none;
+            letter-spacing: 1.1px;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+
+        .review-btn::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.13);
+            transition: width 0.3s;
+            z-index: 0;
+        }
+
+        .review-btn:hover::after {
+            width: 100%;
+        }
+
+        .review-btn:hover {
+            background: linear-gradient(90deg, #00997a 60%, #00b894 100%);
+            transform: translateY(-2px) scale(1.025);
+            box-shadow: 0 6px 24px rgba(0, 184, 148, 0.13);
+        }
+
         @media (max-width: 500px) {
             .container {
                 padding: 28px 8px 22px 8px;
@@ -131,26 +172,33 @@
                 font-size: 1rem;
                 padding: 12px 0;
             }
+
+            .review-btn {
+                font-size: 0.98rem;
+                padding: 11px 0;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Pilih Demo Desain</h1>
-        <div class="subtitle">Jelajahi berbagai gaya homepage. Klik di bawah untuk melihat pratinjau setiap demo.</div>
+        <h1>Select Demo Design</h1>
+        <div class="subtitle">Explore various homepage styles. Click below to preview each demo.</div>
         <div class="demo-buttons">
-            <a href="{{ url('/home1') }}" class="demo-btn">Demo Desain 1</a>
-            <a href="{{ url('/home2') }}" class="demo-btn">Demo Desain 2</a>
-            <a href="{{ url('/home3') }}" class="demo-btn">Demo Desain 3</a>
-            <a href="{{ url('/home4') }}" class="demo-btn">Demo Desain 4</a>
-            <a href="{{ url('/home5') }}" class="demo-btn">Demo Desain 5</a>
-            <a href="{{ url('/home6') }}" class="demo-btn">Demo Desain 6</a>
-            <a href="{{ url('/home7') }}" class="demo-btn">Demo Desain 7</a>
-            <a href="{{ url('/home8') }}" class="demo-btn">Demo Desain 8</a>
-            <a href="{{ url('/home9') }}" class="demo-btn">Demo Desain 9</a>
-            <a href="{{ url('/home10') }}" class="demo-btn">Demo Desain 10</a>
+            <a href="{{ url('/home1') }}" class="demo-btn" target="_blank">Demo Design 1</a>
+            <a href="{{ url('/home2') }}" class="demo-btn" target="_blank">Demo Design 2</a>
+            <a href="{{ url('/home3') }}" class="demo-btn" target="_blank">Demo Design 3</a>
+            <a href="{{ url('/home4') }}" class="demo-btn" target="_blank">Demo Design 4</a>
+            <a href="{{ url('/home5') }}" class="demo-btn" target="_blank">Demo Design 5</a>
+            <a href="{{ url('/home6') }}" class="demo-btn" target="_blank">Demo Design 6</a>
+            <a href="{{ url('/home7') }}" class="demo-btn" target="_blank">Demo Design 7</a>
+            <a href="{{ url('/home8') }}" class="demo-btn" target="_blank">Demo Design 8</a>
+            <a href="{{ url('/home9') }}" class="demo-btn" target="_blank">Demo Design 9</a>
+            <a href="{{ url('/home10') }}" class="demo-btn" target="_blank">Demo Design 10</a>
         </div>
+        <a href="https://docs.google.com/document/d/1ZEXghMFE4X_M2Pt0hHvqWBFcLg0SWrqlUHrU2DKJVpM/edit?usp=sharing"
+            target="_blank" class="review-btn">Review Document</a>
     </div>
 </body>
 
