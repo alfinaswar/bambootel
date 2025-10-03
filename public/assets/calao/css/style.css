@@ -1,0 +1,137 @@
+#villaSlider::-webkit-scrollbar {
+  display: none;
+}
+#villaSlider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* tumpuk gambar di dalam card */
+.villa-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.villa-img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.villa-container:hover .buttons {
+  opacity: 1;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+#scrollLine svg {
+  stroke-dasharray: 1000; /* total panjang garis */
+  stroke-dashoffset: 1000; /* mulai tersembunyi */
+}
+/* ======================= Animasi Menu Mobile Sinematik ======================= */
+
+/* 1. Styling & Animasi Burger menjadi 'X' */
+.burger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white; /* Warna awal ikon burger */
+  border-radius: 2px;
+}
+/* Mengubah warna burger saat navbar di-scroll */
+#navbar.scrolled .burger-line {
+  background-color: #333333; /* Dark Charcoal */
+}
+
+/* State ketika menu terbuka (dikelola oleh JS dengan class 'menu-open' pada <body>) */
+body.menu-open #burger .burger-line {
+  background-color: white; /* Warna ikon 'X' selalu putih agar kontras */
+}
+body.menu-open #burger .burger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+body.menu-open #burger .burger-line:nth-child(2) {
+  opacity: 0;
+}
+body.menu-open #burger .burger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 2. Animasi Latar Menu (Slide Down) */
+/* CSS Awal: -translate-y-full (di HTML) */
+/* State ketika menu terbuka */
+body.menu-open #mobile-menu {
+  transform: translateY(0);
+}
+
+/* 3. Animasi Link Menu (Staggered Fade-in & Slide-up) */
+#mobile-menu .menu-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+/* State ketika menu terbuka */
+body.menu-open #mobile-menu .menu-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Membuat efek staggered (muncul bergantian) */
+body.menu-open #mobile-menu .menu-item:nth-child(1) {
+  transition-delay: 0.2s;
+}
+body.menu-open #mobile-menu .menu-item:nth-child(2) {
+  transition-delay: 0.3s;
+}
+body.menu-open #mobile-menu .menu-item:nth-child(3) {
+  transition-delay: 0.4s;
+}
+body.menu-open #mobile-menu .menu-item:nth-child(4) {
+  transition-delay: 0.5s;
+}
+body.menu-open #mobile-menu .menu-item:nth-child(5) {
+  transition-delay: 0.6s;
+}
+body.menu-open #mobile-menu .menu-item:nth-child(6) {
+  transition-delay: 0.7s;
+}
+/* ======================= Perbaikan Warna Teks Navbar Saat Scroll ======================= */
+
+/*
+  Aturan ini akan aktif HANYA ketika #navbar memiliki kelas .scrolled,
+  yang ditambahkan oleh JavaScript saat pengguna scroll ke bawah.
+*/
+
+/* Mengubah warna link menu desktop menjadi gelap */
+#navbar.scrolled #desktop-menu a {
+  color: #333333; /* Warna Dark Charcoal / Hitam */
+}
+
+/* Mengubah warna hover link menu desktop saat di-scroll */
+#navbar.scrolled #desktop-menu a:hover {
+  color: #d8b29a; /* Warna Terracotta */
+}
+
+/* Mengubah gaya tombol "Book Now" saat di-scroll */
+#navbar.scrolled #book-btn {
+  color: #d8b29a; /* Teks menjadi Terracotta */
+  border-color: #d8b29a; /* Border menjadi Terracotta */
+}
+
+/* Mengubah gaya hover tombol "Book Now" saat di-scroll */
+#navbar.scrolled #book-btn:hover {
+  background-color: #d8b29a; /* Background menjadi Terracotta */
+  color: white; /* Teks menjadi Putih */
+}

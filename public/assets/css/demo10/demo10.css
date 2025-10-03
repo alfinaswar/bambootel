@@ -1,0 +1,530 @@
+/* ================= Versi 2: CSS dengan Animasi Dasar & Carousel ================= */
+/* ... (Gaya Global, Header, Hero dari Versi 1 tetap sama) ... */
+:root {
+    --terracotta: #d8b29a;
+    --gold: #c9a473;
+    --white: #ffffff;
+    --cream: #f9f6f2;
+    --dark-charcoal: #333333;
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Montserrat", sans-serif;
+    --transition-speed: 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--font-body);
+    color: var(--dark-charcoal);
+    background-color: var(--cream);
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--terracotta);
+}
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+.section-title {
+    text-align: center;
+}
+p {
+    margin-bottom: 1rem;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+section {
+    padding: 80px 0;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: var(--transition-speed);
+    cursor: pointer;
+    text-align: center;
+}
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition-speed);
+}
+#main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+.logo img {
+    height: 40px;
+}
+.logo .logo-terracotta {
+    display: none;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+.nav-links li {
+    margin: 0 20px;
+    position: relative;
+}
+.nav-links a {
+    color: var(--white);
+    font-weight: 700;
+    transition: var(--transition-speed);
+}
+.btn-book-now {
+    border: 2px solid var(--white);
+    color: var(--white);
+    background: transparent;
+}
+.btn-book-now:hover {
+    background-color: var(--white);
+    color: var(--dark-charcoal);
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu li a {
+    color: var(--terracotta);
+    padding: 10px 20px;
+    display: block;
+}
+.dropdown-menu li a:hover {
+    background-color: var(--cream);
+    color: var(--gold);
+}
+#main-header.scrolled {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#main-header.scrolled .logo-white {
+    display: none;
+}
+#main-header.scrolled .logo-terracotta {
+    display: block;
+}
+#main-header.scrolled .nav-links a {
+    color: var(--terracotta);
+}
+#main-header.scrolled .nav-links a:hover {
+    color: var(--gold);
+}
+#main-header.scrolled .btn-book-now {
+    background-color: var(--terracotta);
+    color: var(--white);
+    border-color: var(--terracotta);
+}
+#main-header.scrolled .btn-book-now:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--dark-charcoal);
+}
+.menu-toggle {
+    display: none;
+}
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    padding: 0;
+}
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+.hero-content h1 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+.hero-content p {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+.btn-hero {
+    background-color: var(--terracotta);
+    color: var(--white);
+    border: 2px solid var(--terracotta);
+}
+.btn-hero:hover {
+    background-color: var(--gold);
+    color: var(--dark-charcoal);
+    border-color: var(--gold);
+}
+/* ======================= BARU: ANIMATION ON SCROLL ======================= */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ======================= DIPERBARUI: Villas Showcase (CAROUSEL) ======================= */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.villa-slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+.villa-slider {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.villa-slider::-webkit-scrollbar {
+    display: none;
+}
+.villa-card {
+    flex: 0 0 350px;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.villa-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.villa-info {
+    padding: 25px;
+}
+.villa-info h3 {
+    margin-bottom: 5px;
+}
+.villa-info p {
+    margin-bottom: 1.5rem;
+    color: #777;
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--terracotta);
+    border: 2px solid var(--terracotta);
+}
+.btn-secondary:hover {
+    background: var(--terracotta);
+    color: var(--white);
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--white);
+    color: var(--terracotta);
+    border: 2px solid var(--cream);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+.carousel-btn:hover {
+    background-color: var(--terracotta);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
+.carousel-btn.prev {
+    left: -25px;
+}
+.carousel-btn.next {
+    right: -25px;
+}
+.carousel-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+/* ======================= DIPERBARUI: Efek Hover ======================= */
+.experience-item img {
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+}
+.experience-item:hover img {
+    transform: scale(1.05);
+}
+#gallery {
+    background: var(--white);
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    grid-auto-flow: dense;
+}
+.photo-item {
+    overflow: hidden;
+    border-radius: 5px;
+}
+.photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+.photo-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.08);
+    cursor: pointer;
+}
+.grid-span-row-2 {
+    grid-row: span 2;
+}
+/* ... (Sisa kode CSS seperti About, Contact, Footer, dan Responsive tetap sama dari Versi 1) ... */
+#intro {
+    background-color: var(--white);
+}
+.text-center-section {
+    text-align: center;
+}
+.text-center-section p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.experience-item {
+    text-align: center;
+}
+.experience-item h3 {
+    margin-bottom: 0.5rem;
+}
+.discover-link {
+    color: var(--terracotta);
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 1rem;
+    position: relative;
+}
+.discover-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--gold);
+    transform: scaleX(0);
+    transition: transform var(--transition-speed);
+}
+.discover-link:hover::after {
+    transform: scaleX(1);
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.about-text,
+.about-image {
+    flex: 1;
+}
+.about-image img {
+    border-radius: 10px;
+}
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+}
+.contact-info a:hover {
+    color: var(--gold);
+}
+.contact-map iframe {
+    border-radius: 10px;
+}
+footer {
+    background-color: var(--dark-charcoal);
+    color: var(--cream);
+    padding-top: 60px;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+}
+.footer-logo a {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--terracotta);
+}
+.footer-links h4,
+.footer-social h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+.footer-links a:hover,
+.footer-social a:hover {
+    color: var(--gold);
+}
+.footer-social a {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+}
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    .about-container {
+        flex-direction: column;
+    }
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .nav-links.active {
+        right: 0;
+    }
+    .nav-links li {
+        margin: 20px 0;
+    }
+    .nav-links a {
+        color: var(--terracotta);
+        font-size: 1.2rem;
+    }
+    .dropdown-menu {
+        display: none !important;
+    }
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--white);
+        transition: var(--transition-speed);
+    }
+    #main-header.scrolled .menu-toggle span {
+        background-color: var(--terracotta);
+    }
+    .carousel-btn {
+        display: none;
+    }
+    .villa-slider-container {
+        overflow-x: auto;
+    }
+    .villa-card {
+        flex: 0 0 80%;
+    }
+}
