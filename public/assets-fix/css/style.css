@@ -1,0 +1,184 @@
+/* Scroll horizontal halus */
+#villaSlider {
+  scroll-behavior: smooth;
+}
+
+/* Hilangin scrollbar di HP */
+#villaSlider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animasi reveal card */
+.villa-card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Mobile fix - full scroll */
+@media (max-width: 768px) {
+  #villaSlider {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .villa-card {
+    scroll-snap-align: start;
+  }
+}
+
+.fade-section {
+  position: relative;
+  z-index: 30; /* selalu di atas video & gradient */
+}
+
+
+.villa-container:hover .buttons {
+  opacity: 1;
+}
+
+
+  .gallery-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  #experiences {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Bungkus krem */
+  #experiences .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Panel kiri & kanan */
+  #experiences .panel {
+    flex: 1;
+    background-color: #F5F5DC;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    opacity: 1; /* biar sedikit transparan, background masih kelihatan */
+  }
+  
+  /* Background tetap */
+  #experiences {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  
+  @layer utilities {
+    .scrollbar-custom::-webkit-scrollbar {
+      width: 12px;
+    }
+  
+    .scrollbar-custom::-webkit-scrollbar-track {
+      background-color: rgba(245, 245, 220, 0.2); /* warna #f5f5dc tapi sangat transparan */
+    }
+  
+    .scrollbar-custom::-webkit-scrollbar-thumb {
+      background-color: rgba(212, 175, 55, 0.6); /* warna emas semi transparan */
+      border: 2px solid rgba(245, 245, 220, 0.1); /* sedikit ruang supaya thumb kelihatan “mengapung” */
+      background-clip: content-box;
+      border-radius: 0; /* kotak */
+    }
+  
+    .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(185, 149, 47, 0.8);
+    }
+  }
+  
+  .reveal-title .title-text {
+    display: inline-block;
+    white-space: normal;
+  }
+  
+  .reveal-title .word {
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .reveal-title .char {
+    display: inline-block;
+  }
+  
+  
+/* ===== Animasi text title galeri ===== */
+.gallery-title {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.gallery-title .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(5px);
+}
+
+/* ===== Paragraf fade in ===== */
+.gallery-paragraph {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+/* Huruf muncul satu per satu */
+.experience-quote {
+  overflow: hidden;
+}
+
+.experience-quote .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(4px);
+}
+
+/* Garis bawah animasi */
+#experience-title .underline-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease-out;
+}
+
+.essence-title .word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.essence-title .char {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .about-block p,
+  .about-block h2 {
+    text-align: justify;
+  }
+}
+
+/* Parallax halus */
+.about-img-wrapper {
+  transform: translateY(0px);
+  transition: transform 0.3s ease-out;
+}
+
+
+
+  
+  
